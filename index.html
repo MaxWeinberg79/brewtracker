@@ -1,3 +1,584 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#5f3d2b"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="apple-mobile-web-app-title" content="BrewTracker"><link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="icon-180.png"><title>BrewTracker 3.0</title><style>
-:root{--bg:#f4ece2;--card:#fffdfa;--ink:#302119;--muted:#75665d;--brand:#5f3d2b;--soft:#efe1d0;--line:#dcc5ae;--danger:#a6292e;--shadow:0 8px 24px rgba(56,33,20,.1)}body.dark{--bg:#18110e;--card:#281e19;--ink:#f8efe8;--muted:#c9b8ac;--brand:#c98b61;--soft:#3a2a22;--line:#62493b}*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.4 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.app{max-width:1450px;margin:auto;padding:16px;padding-top:max(16px,env(safe-area-inset-top));padding-bottom:max(20px,env(safe-area-inset-bottom))}.hero,.card,.panel{border-radius:18px;box-shadow:var(--shadow)}.hero{background:linear-gradient(115deg,#3d271b,#744c35);color:#fff;padding:22px 25px;display:flex;justify-content:space-between;align-items:center;gap:18px}.hero h1{margin:0;font-size:2rem}.hero h1 small{font-size:.43em;opacity:.8}.hero p{margin:5px 0 0}.tools{display:flex;gap:9px;align-items:center;flex-wrap:wrap}.tools input{width:68px}.btn,input,select{font:inherit;min-height:44px}.btn{border:0;border-radius:10px;padding:9px 13px;background:var(--brand);color:#fff;font-weight:750;cursor:pointer;-webkit-appearance:none}.secondary{background:var(--soft);color:var(--ink)}input,select{width:100%;border:1px solid var(--line);border-radius:9px;padding:8px;background:var(--card);color:var(--ink)}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:15px 0}.card{background:var(--card);padding:15px}.card small{color:var(--muted)}.card strong{display:block;font-size:1.7rem;color:var(--brand);margin:4px 0}.layout{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(320px,.8fr);gap:15px}.panel{background:var(--card);padding:16px}.panel h2{margin:0 0 12px}.offline{display:none;margin:0 0 12px;padding:10px 13px;border-radius:11px;background:#fff3cd;color:#5d4a11;border:1px solid #d9b95b;font-weight:700}.offline.on{display:block}.warning{display:none;margin:0 0 12px;padding:10px 13px;border-radius:11px;background:#fde9e9;color:#761416;border:2px solid var(--danger);font-weight:800}.warning.on{display:block}.chart{height:140px;display:flex;align-items:flex-end;gap:8px}.barbox{height:100%;flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:4px}.bar{width:70%;max-width:42px;min-height:3px;background:#815438;border-radius:7px 7px 2px 2px}.barbox small{color:var(--muted)}.calhead{display:flex;justify-content:space-between;align-items:center;gap:8px}.calhead h2{margin:0;text-align:center}.week,.calendar{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:5px}.week div{text-align:center;color:var(--muted);font-weight:700;padding:8px 0}.day{min-height:82px;border:1px solid var(--line);border-radius:11px;background:var(--card);color:var(--ink);padding:7px;text-align:left;-webkit-appearance:none}.day.blank{visibility:hidden}.day.sel{outline:3px solid var(--brand);outline-offset:1px}.day.today b{background:#2475a5;color:#fff}.day b{display:flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%}.day span{display:block;margin-top:10px;font-weight:800}.l1{background:#f0dfc9}.l2{background:#deb98e}.l3{background:#cc8753}.l4{background:#a65332;color:#fff}.l5{background:var(--danger);color:#fff}.legend{display:flex;gap:10px;flex-wrap:wrap;color:var(--muted);font-size:.8rem;margin-top:10px}.quick{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-bottom:15px}.quick .btn{padding:8px 4px}form{display:grid;gap:9px}.field{display:grid;gap:4px}.field label{font-weight:700}.actions{display:flex;gap:7px}.details{margin-top:17px}.empty{background:var(--soft);color:var(--muted);padding:15px;text-align:center;border-radius:10px}.entry{background:var(--soft);padding:10px;border-radius:10px;margin:7px 0;display:flex;justify-content:space-between;gap:8px}.entry small{display:block;color:var(--muted)}.insights{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:13px}.insight{padding:10px;background:var(--soft);border-radius:10px}.insight small{display:block;color:var(--muted)}.toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);display:none;background:#18422c;color:#fff;padding:10px 14px;border-radius:10px;z-index:10}.toast.on{display:block}@media(max-width:900px){.layout{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}}@media(max-width:600px){.app{padding-left:8px;padding-right:8px}.hero{align-items:flex-start;flex-direction:column}.stats{gap:8px}.card,.panel{padding:11px}.day{min-height:64px;padding:4px}.day span{font-size:.7rem}.quick{grid-template-columns:1fr}.week,.calendar{gap:3px}.week div{font-size:.72rem}.entry{flex-direction:column}}
-</style></head><body><main class="app"><header class="hero"><div><h1>☕ BrewTracker <small>3.0 PWA</small></h1><p>Track your coffee habits online or offline.</p></div><div class="tools"><label for="limit">Daily limit</label><input id="limit" type="number" min="1" max="30" value="4"><span>cups</span><button class="btn" id="theme" type="button">🌙 Dark</button></div></header><section class="stats"><div class="card"><small>☕ Selected day</small><strong id="sd">0</strong>cups</div><div class="card"><small>📅 Selected week</small><strong id="sw">0</strong>cups</div><div class="card"><small>📆 This month</small><strong id="sm">0</strong>cups</div><div class="card"><small>📊 Daily average</small><strong id="sa">0.0</strong>cups/day</div></section><div id="offline" class="offline">Offline mode: BrewTracker is using locally cached files.</div><div id="warn" class="warning"></div><section class="layout"><div><section class="panel"><h2>Weekly consumption</h2><div id="chart" class="chart"></div></section><section class="panel" style="margin-top:15px"><div class="calhead"><button class="btn secondary" id="prev" type="button">‹ Previous</button><h2 id="month"></h2><button class="btn secondary" id="next" type="button">Next ›</button></div><div class="week"><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div><div>Sun</div></div><div id="calendar" class="calendar"></div><div class="legend"><span>□ low</span><span>▨ medium</span><span>▧ high</span><span>■ at limit</span><span style="color:var(--danger)">■ over limit</span></div></section></div><aside class="panel"><h2>Quick add</h2><div id="quick" class="quick"><button class="btn secondary" type="button" data-type="Filter coffee">☕ +1 Filter</button><button class="btn secondary" type="button" data-type="Espresso">⚡ +1 Espresso</button><button class="btn secondary" type="button" data-type="Cappuccino">🥛 +1 Cappuccino</button></div><h2 id="ft">Add coffee</h2><form id="form"><input id="eid" type="hidden"><div class="field"><label for="date">Date</label><input id="date" type="date" required></div><div class="field"><label for="type">Coffee type</label><select id="type"><option>Filter coffee</option><option>Espresso</option><option>Cappuccino</option><option>Latte Macchiato</option><option>Americano</option><option>Other coffee</option></select></div><div class="field"><label for="size">Size</label><select id="size"><option value="">Not specified</option><option>Small</option><option>Medium</option><option>Large</option></select></div><div class="field"><label for="qty">Quantity</label><input id="qty" type="number" min="1" max="30" value="1" required></div><div class="actions"><button class="btn" type="submit">Save entry</button><button class="btn secondary" id="cancel" type="button" style="display:none">Cancel</button></div></form><div class="details"><h2 id="dt">Day details</h2><div id="details"></div></div><div class="insights"><div class="insight"><small>Favorite coffee</small><b id="fav">No data</b></div><div class="insight"><small>Tracked days</small><b id="tracked">0</b></div></div></aside></section></main><div id="toast" class="toast"></div><script src="app.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <meta name="theme-color" content="#5f3d2b">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="BrewTracker">
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="apple-touch-icon" href="icon-180.png">
+    <title>BrewTracker 3.0</title>
+    <style>
+        :root {
+            --bg: #f4ece2;
+            --card: #fffdfa;
+            --ink: #302119;
+            --muted: #75665d;
+            --brand: #5f3d2b;
+            --soft: #efe1d0;
+            --line: #dcc5ae;
+            --danger: #a6292e;
+            --shadow: 0 8px 24px rgba(56, 33, 20, .1)
+        }
+
+        body.dark {
+            --bg: #18110e;
+            --card: #281e19;
+            --ink: #f8efe8;
+            --muted: #c9b8ac;
+            --brand: #c98b61;
+            --soft: #3a2a22;
+            --line: #62493b
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html {
+            -webkit-text-size-adjust: 100%
+        }
+
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--ink);
+            font: 15px/1.4 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif
+        }
+
+        .app {
+            max-width: 1450px;
+            margin: auto;
+            padding: 16px;
+            padding-top: max(16px, env(safe-area-inset-top));
+            padding-bottom: max(20px, env(safe-area-inset-bottom))
+        }
+
+        .hero,
+        .card,
+        .panel {
+            border-radius: 18px;
+            box-shadow: var(--shadow)
+        }
+
+        .hero {
+            background: linear-gradient(115deg, #3d271b, #744c35);
+            color: #fff;
+            padding: 22px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 18px
+        }
+
+        .hero h1 {
+            margin: 0;
+            font-size: 2rem
+        }
+
+        .hero h1 small {
+            font-size: .43em;
+            opacity: .8
+        }
+
+        .hero p {
+            margin: 5px 0 0
+        }
+
+        .tools {
+            display: flex;
+            gap: 9px;
+            align-items: center;
+            flex-wrap: wrap
+        }
+
+        .tools input {
+            width: 68px
+        }
+
+        .btn,
+        input,
+        select {
+            font: inherit;
+            min-height: 44px
+        }
+
+        .btn {
+            border: 0;
+            border-radius: 10px;
+            padding: 9px 13px;
+            background: var(--brand);
+            color: #fff;
+            font-weight: 750;
+            cursor: pointer;
+            -webkit-appearance: none
+        }
+
+        .secondary {
+            background: var(--soft);
+            color: var(--ink)
+        }
+
+        input,
+        select {
+            width: 100%;
+            border: 1px solid var(--line);
+            border-radius: 9px;
+            padding: 8px;
+            background: var(--card);
+            color: var(--ink)
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            margin: 15px 0
+        }
+
+        .card {
+            background: var(--card);
+            padding: 15px
+        }
+
+        .card small {
+            color: var(--muted)
+        }
+
+        .card strong {
+            display: block;
+            font-size: 1.7rem;
+            color: var(--brand);
+            margin: 4px 0
+        }
+
+        .layout {
+            display: grid;
+            grid-template-columns: minmax(0, 1.7fr) minmax(320px, .8fr);
+            gap: 15px
+        }
+
+        .panel {
+            background: var(--card);
+            padding: 16px
+        }
+
+        .panel h2 {
+            margin: 0 0 12px
+        }
+
+        .offline {
+            display: none;
+            margin: 0 0 12px;
+            padding: 10px 13px;
+            border-radius: 11px;
+            background: #fff3cd;
+            color: #5d4a11;
+            border: 1px solid #d9b95b;
+            font-weight: 700
+        }
+
+        .offline.on {
+            display: block
+        }
+
+        .warning {
+            display: none;
+            margin: 0 0 12px;
+            padding: 10px 13px;
+            border-radius: 11px;
+            background: #fde9e9;
+            color: #761416;
+            border: 2px solid var(--danger);
+            font-weight: 800
+        }
+
+        .warning.on {
+            display: block
+        }
+
+        .chart {
+            height: 140px;
+            display: flex;
+            align-items: flex-end;
+            gap: 8px
+        }
+
+        .barbox {
+            height: 100%;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 4px
+        }
+
+        .bar {
+            width: 70%;
+            max-width: 42px;
+            min-height: 3px;
+            background: #815438;
+            border-radius: 7px 7px 2px 2px
+        }
+
+        .barbox small {
+            color: var(--muted)
+        }
+
+        .calhead {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 8px
+        }
+
+        .calhead h2 {
+            margin: 0;
+            text-align: center
+        }
+
+        .week,
+        .calendar {
+            display: grid;
+            grid-template-columns: repeat(7, minmax(0, 1fr));
+            gap: 5px
+        }
+
+        .week div {
+            text-align: center;
+            color: var(--muted);
+            font-weight: 700;
+            padding: 8px 0
+        }
+
+        .day {
+            min-height: 82px;
+            border: 1px solid var(--line);
+            border-radius: 11px;
+            background: var(--card);
+            color: var(--ink);
+            padding: 7px;
+            text-align: left;
+            -webkit-appearance: none
+        }
+
+        .day.blank {
+            visibility: hidden
+        }
+
+        .day.sel {
+            outline: 3px solid var(--brand);
+            outline-offset: 1px
+        }
+
+        .day.today b {
+            background: #2475a5;
+            color: #fff
+        }
+
+        .day b {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%
+        }
+
+        .day span {
+            display: block;
+            margin-top: 10px;
+            font-weight: 800
+        }
+
+        .l1 {
+            background: #f0dfc9
+        }
+
+        .l2 {
+            background: #deb98e
+        }
+
+        .l3 {
+            background: #cc8753
+        }
+
+        .l4 {
+            background: #a65332;
+            color: #fff
+        }
+
+        .l5 {
+            background: var(--danger);
+            color: #fff
+        }
+
+        .legend {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            color: var(--muted);
+            font-size: .8rem;
+            margin-top: 10px
+        }
+
+        .quick {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 7px;
+            margin-bottom: 15px
+        }
+
+        .quick .btn {
+            padding: 8px 4px
+        }
+
+        form {
+            display: grid;
+            gap: 9px
+        }
+
+        .field {
+            display: grid;
+            gap: 4px
+        }
+
+        .field label {
+            font-weight: 700
+        }
+
+        .actions {
+            display: flex;
+            gap: 7px
+        }
+
+        .details {
+            margin-top: 17px
+        }
+
+        .empty {
+            background: var(--soft);
+            color: var(--muted);
+            padding: 15px;
+            text-align: center;
+            border-radius: 10px
+        }
+
+        .entry {
+            background: var(--soft);
+            padding: 10px;
+            border-radius: 10px;
+            margin: 7px 0;
+            display: flex;
+            justify-content: space-between;
+            gap: 8px
+        }
+
+        .entry small {
+            display: block;
+            color: var(--muted)
+        }
+
+        .insights {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-top: 13px
+        }
+
+        .insight {
+            padding: 10px;
+            background: var(--soft);
+            border-radius: 10px
+        }
+
+        .insight small {
+            display: block;
+            color: var(--muted)
+        }
+
+        .toast {
+            position: fixed;
+            left: 50%;
+            bottom: 20px;
+            transform: translateX(-50%);
+            display: none;
+            background: #18422c;
+            color: #fff;
+            padding: 10px 14px;
+            border-radius: 10px;
+            z-index: 10
+        }
+
+        .toast.on {
+            display: block
+        }
+
+        @media(max-width:900px) {
+            .layout {
+                grid-template-columns: 1fr
+            }
+
+            .stats {
+                grid-template-columns: repeat(2, 1fr)
+            }
+        }
+
+        @media(max-width:600px) {
+            .app {
+                padding-left: 8px;
+                padding-right: 8px
+            }
+
+            .hero {
+                align-items: flex-start;
+                flex-direction: column
+            }
+
+            .stats {
+                gap: 8px
+            }
+
+            .card,
+            .panel {
+                padding: 11px
+            }
+
+            .day {
+                min-height: 64px;
+                padding: 4px
+            }
+
+            .day span {
+                font-size: .7rem
+            }
+
+            .quick {
+                grid-template-columns: 1fr
+            }
+
+            .week,
+            .calendar {
+                gap: 3px
+            }
+
+            .week div {
+                font-size: .72rem
+            }
+
+            .entry {
+                flex-direction: column
+            }
+        }
+        .app-footer {
+            width: 100%;
+            margin-top: 30px;
+            padding:
+                18px
+                max(16px, env(safe-area-inset-right))
+                max(18px, env(safe-area-inset-bottom))
+                max(16px, env(safe-area-inset-left));
+            text-align: center;
+            font-size: 0.8rem;
+            line-height: 1.5;
+            color: var(--muted);
+            background-color: var(--card);
+            border-top: 1px solid var(--line);
+        }
+    </style>
+</head>
+
+<body>
+    <main class="app">
+        <header class="hero">
+            <div>
+                <h1>☕ BrewTracker <small>3.0 PWA</small></h1>
+                <p>Track your coffee habits online or offline.</p>
+            </div>
+            <div class="tools"><label for="limit">Daily limit</label><input id="limit" type="number" min="1" max="30"
+                    value="4"><span>cups</span><button class="btn" id="theme" type="button">🌙 Dark</button></div>
+        </header>
+        <section class="stats">
+            <div class="card"><small>☕ Selected day</small><strong id="sd">0</strong>cups</div>
+            <div class="card"><small>📅 Selected week</small><strong id="sw">0</strong>cups</div>
+            <div class="card"><small>📆 This month</small><strong id="sm">0</strong>cups</div>
+            <div class="card"><small>📊 Daily average</small><strong id="sa">0.0</strong>cups/day</div>
+        </section>
+        <div id="offline" class="offline">Offline mode: BrewTracker is using locally cached files.</div>
+        <div id="warn" class="warning"></div>
+        <section class="layout">
+            <div>
+                <section class="panel">
+                    <h2>Weekly consumption</h2>
+                    <div id="chart" class="chart"></div>
+                </section>
+                <section class="panel" style="margin-top:15px">
+                    <div class="calhead"><button class="btn secondary" id="prev" type="button">‹ Previous</button>
+                        <h2 id="month"></h2><button class="btn secondary" id="next" type="button">Next ›</button>
+                    </div>
+                    <div class="week">
+                        <div>Mon</div>
+                        <div>Tue</div>
+                        <div>Wed</div>
+                        <div>Thu</div>
+                        <div>Fri</div>
+                        <div>Sat</div>
+                        <div>Sun</div>
+                    </div>
+                    <div id="calendar" class="calendar"></div>
+                    <div class="legend"><span>□ low</span><span>▨ medium</span><span>▧ high</span><span>■ at
+                            limit</span><span style="color:var(--danger)">■ over limit</span></div>
+                </section>
+            </div>
+            <aside class="panel">
+                <h2>Quick add</h2>
+                <div id="quick" class="quick"><button class="btn secondary" type="button" data-type="Filter coffee">☕ +1
+                        Filter</button><button class="btn secondary" type="button" data-type="Espresso">⚡ +1
+                        Espresso</button><button class="btn secondary" type="button" data-type="Cappuccino">🥛 +1
+                        Cappuccino</button></div>
+                <h2 id="ft">Add coffee</h2>
+                <form id="form"><input id="eid" type="hidden">
+                    <div class="field"><label for="date">Date</label><input id="date" type="date" required></div>
+                    <div class="field"><label for="type">Coffee type</label><select id="type">
+                            <option>Filter coffee</option>
+                            <option>Espresso</option>
+                            <option>Cappuccino</option>
+                            <option>Latte Macchiato</option>
+                            <option>Americano</option>
+                            <option>Other coffee</option>
+                        </select></div>
+                    <div class="field"><label for="size">Size</label><select id="size">
+                            <option value="">Not specified</option>
+                            <option>Small</option>
+                            <option>Medium</option>
+                            <option>Large</option>
+                        </select></div>
+                    <div class="field"><label for="qty">Quantity</label><input id="qty" type="number" min="1" max="30"
+                            value="1" required></div>
+                    <div class="actions"><button class="btn" type="submit">Save entry</button><button
+                            class="btn secondary" id="cancel" type="button" style="display:none">Cancel</button></div>
+                </form>
+                <div class="details">
+                    <h2 id="dt">Day details</h2>
+                    <div id="details"></div>
+                </div>
+                <div class="insights">
+                    <div class="insight"><small>Favorite coffee</small><b id="fav">No data</b></div>
+                    <div class="insight"><small>Tracked days</small><b id="tracked">0</b></div>
+                </div>
+            </aside>
+        </section>
+    </main>
+    <div id="toast" class="toast"></div>
+    <script src="app.js"></script>
+    <footer class="app-footer">
+        &copy; 2026 Karsten Kley &middot; BrewTracker 3.0 PWA
+        &middot; All rights reserved.
+    </footer>
+</body>
+
+</html>
