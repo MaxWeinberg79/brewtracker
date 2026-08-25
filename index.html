@@ -122,15 +122,23 @@
             color: var(--ink)
         }
 
-        input,
-        select {
-            width: 100%;
-            border: 1px solid var(--line);
-            border-radius: 9px;
-            padding: 8px;
-            background: var(--card);
-            color: var(--ink)
-        }
+    input,
+    select {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+
+        border: 1px solid var(--line);
+        border-radius: 9px;
+        padding: 8px;
+
+        background: var(--card);
+        color: var(--ink);
+
+        -webkit-appearance: none;
+        appearance: none;
+    }
 
         .stats {
             display: grid;
