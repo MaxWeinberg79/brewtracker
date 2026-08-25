@@ -238,16 +238,38 @@
         }
 
         .calhead {
-            display: flex;
-            justify-content: space-between;
+            display: grid;
+            grid-template-columns: 110px 1fr 110px;
             align-items: center;
-            gap: 8px
+            gap: 12px;
         }
+
 
         .calhead h2 {
             margin: 0;
-            text-align: center
+            text-align: center;
+            min-height: 60px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 1.4rem;
+            font-weight: 700;
         }
+
+        .calhead .btn {
+            height: 60px;
+            width: 110px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+
+            font-weight: 700;
+        }
+
 
         .week,
         .calendar {
@@ -437,6 +459,41 @@
         }
 
         @media(max-width:600px) {
+
+            .calhead {
+                display: grid;
+                grid-template-columns: 90px 1fr 90px;
+                align-items: center;
+                gap: 8px;
+            }
+
+            .calhead .btn {
+                width: 90px;
+                height: 56px;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 4px;
+
+                padding: 0;
+                font-size: 0.9rem;
+                font-weight: 700;
+            }
+
+            .calhead h2 {
+                margin: 0;
+                text-align: center;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                min-height: 56px;
+                font-size: 1.1rem;
+                line-height: 1.2;
+            }
+
             .app {
                 padding-left: 8px;
                 padding-right: 8px
@@ -525,9 +582,22 @@
                     <div id="chart" class="chart"></div>
                 </section>
                 <section class="panel" style="margin-top:15px">
-                    <div class="calhead"><button class="btn secondary" id="prev" type="button">‹ Previous</button>
-                        <h2 id="month"></h2><button class="btn secondary" id="next" type="button">Next ›</button>
+                   
+
+                    <div class="calhead">
+                        <button class="btn secondary" id="prev" type="button">
+                            <span>‹</span>
+                            <span>Previous</span>
+                        </button>
+
+                        <h2 id="month"></h2>
+
+                        <button class="btn secondary" id="next" type="button">
+                            <span>Next</span>
+                            <span>›</span>
+                        </button>
                     </div>
+
                     <div class="week">
                         <div>Mon</div>
                         <div>Tue</div>
