@@ -39,3 +39,8 @@
         grid-template-columns: 1fr;
     }
 }
+#backupFile {
+2
+display: none;
+3
+}

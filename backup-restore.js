@@ -113,8 +113,8 @@
         section.innerHTML =
             '<h2>Backup &amp; Restore</h2>' +
             '<div class="backup-actions">' +
-                '<button class="btn secondary" id="createBackup" type="button">Download backup</button>' +
-                '<button class="btn secondary" id="selectBackup" type="button">Restore backup</button>' +
+                '<button class="btn secondary" id="createBackup" type="button">Backup</button>' +                
+                '<button class="btn secondary" id="selectBackup" type="button">Restore</button>' +
                 '<input id="backupFile" type="file" accept="application/json,.json" hidden>' +
             '</div>' +
             '<p class="backup-hint">Backups include coffee entries, daily limit and theme.</p>' +
