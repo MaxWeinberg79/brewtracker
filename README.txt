@@ -1,20 +1,19 @@
-BrewTracker 3.0 PWA Edition
+BrewTracker 3.2 PWA Release
 
-FILES
-- index.html: main app
-- app.js: app logic
-- manifest.webmanifest: PWA metadata
-- sw.js: offline service worker
-- icon-*.png: app icons
+NEW
+- Dashboard / Statistics tabs in one page
+- KPI cards, trend chart, weekday averages
+- Coffee type and size distribution
+- Estimated caffeine intake
+- Monthly comparison
+- Monthly heatmap
+- Integrated Backup & Restore
+- Version 3.2 PWA and updated offline cache
 
-LOCAL TEST
-1. Open a terminal in this folder.
-2. Run: py -m http.server 8000
-3. Open http://localhost:8000 on the same PC.
+DEPLOY
+Copy every file from this folder to the root of the GitHub repository. Replace the existing files, commit, and push.
+Commit summary: Release BrewTracker 3.2
 
-IPHONE TEST
-Open the app from an HTTPS-hosted address in Safari, then Share > Add to Home Screen.
-The offline cache is prepared after the first successful online load.
-
-Important: opening index.html directly from Files does not provide the intended PWA behavior.
-Service workers require a secure context (HTTPS, or localhost on the same device).
+TEST
+Run locally with: py -m http.server 8000
+Then open: http://localhost:8000
