@@ -18,6 +18,7 @@
   <nav class="tabs" aria-label="Main navigation">
     <button class="tab active" data-tab="dashboard">Dashboard</button>
     <button class="tab" data-tab="statistics">Statistics</button>
+    <button class="tab" data-tab="about">About</button>
   </nav>
   <div class="header-tools"><label for="limit">Daily limit</label><input id="limit" type="number" min="1" max="30" value="4"><span>cups</span><button class="btn ghost" id="theme" type="button">🌙 Dark</button></div>
 </header>
@@ -84,6 +85,47 @@
   </section>
   <article class="panel"><h3>Coffees per day (heatmap)</h3><div id="monthlyHeatmap" class="monthly-heatmap"></div><div class="legend heat-legend"><span><i class="heat0"></i>No entry</span><span><i class="heat1"></i>1 cup</span><span><i class="heat2"></i>2 cups</span><span><i class="heat3"></i>3–4 cups</span><span><i class="heat4"></i>5–6 cups</span><span><i class="heat5"></i>7+ cups</span></div></article>
 </section>
+<section id="aboutView" class="view">
+
+    <article class="panel">
+        <h2>About BrewTracker</h2>
+
+        <div class="about-grid">
+
+            <div class="about-item">
+                <h3>Version</h3>
+                <p>3.2.0</p>
+            </div>
+
+            <div class="about-item">
+                <h3>Author</h3>
+                <p>Karsten Kley</p>
+            </div>
+
+            <div class="about-item">
+                <h3>Privacy</h3>
+                <p>
+                    All data is stored locally in your browser.
+                    No user account is required.
+                </p>
+            </div>
+
+            <div class="about-item">
+                <h3>GitHub</h3>
+                <p>
+                    <a href="https://maxweinberg79.github.io/brewtracker/"
+                       target="_blank">
+                       Project Website
+                    </a>
+                </p>
+            </div>
+
+        </div>
+
+    </article>
+
+</section>
+
 </main>
 <footer>© 2026 Karsten Kley · BrewTracker 3.2 PWA · All rights reserved.</footer>
 <div id="toast" class="toast"></div>

@@ -42,3 +42,19 @@
 #backupFile {
     display: none !important;
 }
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    gap: 15px;
+}
+
+.about-item {
+    background: var(--soft);
+    border-radius: 12px;
+    padding: 15px;
+}
+
+.about-item h3 {
+    margin-top: 0;
+    color: var(--brand);
+}
