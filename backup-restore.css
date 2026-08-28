@@ -40,7 +40,5 @@
     }
 }
 #backupFile {
-2
-display: none;
-3
+    display: none !important;
 }
