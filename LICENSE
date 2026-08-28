@@ -1,0 +1,74 @@
+BrewTracker Proprietary License
+Version 1.0, 28 August 2026
+
+Copyright (c) 2026 Karsten Kley. All rights reserved.
+
+1. Ownership
+
+BrewTracker, including its source code, design, documentation, graphics,
+application icons, and associated files, is the exclusive property of
+Karsten Kley unless otherwise stated in writing.
+
+2. Permitted Use
+
+Permission is granted to access and use the publicly hosted BrewTracker
+application for personal, non-commercial purposes.
+
+Permission is also granted to download an unmodified copy of the application
+solely for personal evaluation, testing, or backup purposes.
+
+3. Restrictions
+
+Without prior written permission from the copyright holder, you may not:
+
+- copy, modify, adapt, translate, or create derivative works from the source code;
+- redistribute, publish, sublicense, sell, rent, lease, or commercially exploit
+  the application or any part of it;
+- remove or alter copyright, authorship, version, or proprietary notices;
+- use the BrewTracker name, branding, or icons to represent another product or
+  service;
+- incorporate the application or its source code into another public or
+  commercial project;
+- claim authorship or ownership of the application or its components.
+
+4. Contributions
+
+No contribution, pull request, issue submission, or other communication grants
+any license or ownership interest unless accepted under separate written terms.
+
+5. Third-Party Components
+
+Third-party components, if any, remain subject to their respective licenses.
+This license does not grant rights that the copyright holder does not own.
+
+6. No Warranty
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS
+FOR A PARTICULAR PURPOSE, TITLE, AND NON-INFRINGEMENT. USE OF THE SOFTWARE IS
+AT YOUR OWN RISK.
+
+7. Limitation of Liability
+
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE COPYRIGHT HOLDER SHALL
+NOT BE LIABLE FOR ANY CLAIM, LOSS, DATA LOSS, DAMAGE, OR OTHER LIABILITY ARISING
+FROM OR RELATED TO THE SOFTWARE OR ITS USE.
+
+8. Data Responsibility
+
+BrewTracker stores application data locally in the user's browser. Users are
+responsible for creating backups and protecting their own data. The copyright
+holder is not responsible for data removed by a browser, device, operating
+system, hosting provider, or user action.
+
+9. Termination
+
+Any permission granted by this license terminates automatically if these terms
+are breached. Upon termination, all retained copies of the software must be
+deleted.
+
+10. Additional Permission
+
+Requests for commercial use, redistribution, modification, integration, or any
+other use not expressly permitted by this license require prior written
+permission from the copyright holder.
