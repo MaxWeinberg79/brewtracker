@@ -1,0 +1,41 @@
+.backup-restore {
+    margin-top: 18px;
+    padding-top: 16px;
+    border-top: 1px solid var(--line);
+}
+
+.backup-restore h2 {
+    margin: 0 0 10px;
+}
+
+.backup-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+}
+
+.backup-actions .btn {
+    width: 100%;
+}
+
+.backup-hint {
+    margin: 8px 0 0;
+    color: var(--muted);
+    font-size: 0.8rem;
+}
+
+.backup-message {
+    min-height: 1.4em;
+    margin: 7px 0 0;
+    font-size: 0.82rem;
+    font-weight: 700;
+}
+
+.backup-message.success { color: #267044; }
+.backup-message.error { color: var(--danger); }
+
+@media (max-width: 600px) {
+    .backup-actions {
+        grid-template-columns: 1fr;
+    }
+}
