@@ -4,6 +4,17 @@ All notable changes to BrewTracker are documented in this file.
 
 The format is based on release sections with the categories **Added**, **Changed**, and **Fixed**.
 
+## [3.2.1] - 2026-08-28
+
+### Added
+- About page
+- Author information
+- Privacy information
+- Repository link
+
+### Fixed
+- About tab navigation
+
 ## [3.2.0] - 2026-08-28
 
 ### Added
