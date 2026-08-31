@@ -22,4 +22,36 @@
       "purpose": "any maskable"
     }
   ]
+  "screenshots": [
+  {
+    "src": "screenshots/1_Track your daily coffee consumption.png",
+    "sizes": "681x1025",
+    "type": "image/png",
+    "label": "Dashboard"
+  },
+  {
+    "src": "screenshots/2_Analyze your coffee habits.png",
+    "sizes": "681x647",
+    "type": "image/png",
+    "label": "Dashboard"
+  },
+  {
+    "src": "screenshots/3_Detailed statistics and insights.png",
+    "sizes": "686x645",
+    "type": "image/png",
+    "label": "Dashboard"
+  },
+  {
+    "src": "screenshots/4_Secure your coffee data.png",
+    "sizes": "655x333",
+    "type": "image/png",
+    "label": "Dashboard"
+  },
+  {
+    "src": "screenshots/5_Privacy-focused and offline capable.png",
+    "sizes": "682x461",
+    "type": "image/png",
+    "label": "Dashboard"
+  }
+]
 }
