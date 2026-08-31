@@ -1,6 +1,6 @@
 {
   "id": "/brewtracker/",
-  "name": "BrewTracker 3.2",
+  "name": "BrewTracker",
   "short_name": "BrewTracker",
   "description": "Offline coffee consumption tracker with statistics",
   "start_url": "./index.html",
@@ -21,37 +21,38 @@
       "type": "image/png",
       "purpose": "any maskable"
     }
-  ]
+  ],
   "screenshots": [
   {
     "src": "screenshots/1_Track your daily coffee consumption.png",
     "sizes": "681x1025",
     "type": "image/png",
-    "label": "Dashboard"
+    "form_factor": "wide",
+    "label": "Track your daily coffee consumption"
   },
   {
     "src": "screenshots/2_Analyze your coffee habits.png",
     "sizes": "681x647",
     "type": "image/png",
-    "label": "Dashboard"
+    "label": "Analyze your coffee habits"
   },
   {
     "src": "screenshots/3_Detailed statistics and insights.png",
     "sizes": "686x645",
     "type": "image/png",
-    "label": "Dashboard"
+    "label": "Detailed statistics and insights"
   },
   {
     "src": "screenshots/4_Secure your coffee data.png",
     "sizes": "655x333",
     "type": "image/png",
-    "label": "Dashboard"
+    "label": "Secure your coffee data"
   },
   {
     "src": "screenshots/5_Privacy-focused and offline capable.png",
     "sizes": "682x461",
     "type": "image/png",
-    "label": "Dashboard"
+    "label": "Privacy-focused and offline capable"
   }
 ]
 }
